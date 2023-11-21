@@ -8,8 +8,9 @@
       .searchF__dest,
       .searchF__checkin {
          @apply my-5;
+
          input {
-            @apply my-3 outline-none bg-white w-full;
+            @apply my-3 outline-none bg-white w-full h-10;
          }
 
          label {

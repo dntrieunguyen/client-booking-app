@@ -1,0 +1,19 @@
+.form__container {
+   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+   h2 {
+      @apply text-center;
+   }
+   form {
+      width: 250px;
+      height: 250px;
+      .form__items {
+         @apply flex flex-col justify-center gap-3 my-3;
+         input {
+            @apply h-[50px] w-full border outline-none;
+         }
+      }
+      button {
+         @apply w-full h-[50px] font-bold rounded-md bg-primary text-white;
+      }
+   }
+}
