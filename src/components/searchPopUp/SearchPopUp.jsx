@@ -23,23 +23,23 @@ const SearchPopUp = () => {
             <form action="" className="searchForm_option">
                <div className="searchForm_optItems">
                   <label htmlFor="">Min price per night</label>
-                  <input name="min" type="number" />
+                  <input name="min" type="number" min={0} />
                </div>
                <div className="searchForm_optItems">
                   <label htmlFor="">Max price per night</label>
-                  <input name="max" type="number" />
+                  <input name="max" type="number" min={0} />
                </div>
                <div className="searchForm_optItems">
                   <label htmlFor="">Adult</label>
-                  <input name="adult" type="number" />
+                  <input name="adult" type="number" min={0} />
                </div>
                <div className="searchForm_optItems">
                   <label htmlFor="">Children</label>
-                  <input name="children" type="number" />
+                  <input name="children" type="number" min={0} />
                </div>
                <div className="searchForm_optItems">
                   <label htmlFor="">Room</label>
-                  <input name="room" type="number" />
+                  <input name="room" type="number" min={0} />
                </div>
             </form>
          </div>
