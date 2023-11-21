@@ -1,0 +1,38 @@
+.search__container {
+   @apply w-[350px] bg-yellow-500 h-fit p-3 rounded-md my-5 sticky top-5;
+   h2 {
+      @apply text-content text-gray-500 my-0;
+   }
+
+   .searchForm__info {
+      .searchF__dest,
+      .searchF__checkin {
+         @apply my-5;
+         input {
+            @apply my-3 outline-none bg-white w-full;
+         }
+
+         label {
+            @apply font-bold;
+         }
+      }
+   }
+   h3 {
+      @apply text-black font-bold;
+   }
+   .searchForm_option {
+      .searchForm_optItems {
+         @apply my-3 px-3;
+         @apply grid grid-cols-4;
+         label {
+            @apply col-start-1 col-span-3 text-sm;
+         }
+         input {
+            @apply col-start-4 outline-none;
+         }
+      }
+   }
+   button {
+      @apply bg-primary text-white w-full;
+   }
+}

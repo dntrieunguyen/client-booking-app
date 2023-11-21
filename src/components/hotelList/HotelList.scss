@@ -1,0 +1,29 @@
+.hotelList {
+   @apply grid grid-cols-4 gap-5;
+   .hotelList__items {
+      img {
+         @apply w-full h-[250px] my-3;
+      }
+      .hotelList__text {
+         h3 {
+            @apply font-bold underline text-purple-700 cursor-pointer;
+         }
+         .hotelList__city {
+            @apply my-3;
+         }
+         .hotelList__price {
+            @apply my-3 font-bold;
+         }
+         .hotelList__rating {
+            @apply my-5 mb-10;
+            span {
+               @apply p-2 bg-primary h-fit text-white;
+            }
+         }
+      }
+   }
+}
+
+h2 {
+   @apply my-5;
+}

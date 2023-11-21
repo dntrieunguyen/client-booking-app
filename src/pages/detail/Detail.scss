@@ -1,0 +1,61 @@
+.detail {
+   .detail__title {
+      @apply flex justify-between my-5;
+      .detail__titleText {
+         .detail__tname {
+            @apply my-3;
+         }
+         .detail__taddress {
+            @apply my-3 font-bold;
+         }
+         .detail__tdistance {
+            @apply my-3 font-bold text-primary;
+         }
+         .detail__tprice {
+            @apply my-3 font-bold text-green-700;
+         }
+      }
+   }
+   button {
+      @apply bg-primary text-white font-bold rounded-md;
+   }
+
+   .detail__Img {
+      @apply grid grid-cols-3 gap-2;
+   }
+
+   .detail__Content {
+      @apply flex gap-5 my-10;
+      .detail__CDesc {
+         @apply flex-[4];
+         h4 {
+            @apply font-bold text-lead my-5;
+         }
+
+         p {
+            @apply text-justify;
+         }
+      }
+
+      .detail__CInfo {
+         @apply w-[260px] flex-1 p-3 bg-blue-100 text-justify;
+
+         h3 {
+            @apply font-bold text-gray-500;
+         }
+
+         p {
+            @apply my-5;
+         }
+         h2 {
+            @apply font-normal;
+            span {
+               @apply font-bold;
+            }
+         }
+         button {
+            @apply w-full;
+         }
+      }
+   }
+}

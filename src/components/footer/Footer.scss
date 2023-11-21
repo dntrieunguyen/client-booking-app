@@ -1,0 +1,29 @@
+footer {
+   .footer__search {
+      @apply relative min-h-[300px] bg-primary;
+      .footer__searchContent {
+         @apply text-white flex flex-col items-center absolute left-1/2 top-1/2 -translate-y-[50%] -translate-x-1/2;
+
+         h2 {
+            @apply text-title;
+         }
+
+         .footer__input {
+            @apply flex gap-5 mt-4;
+            input {
+               @apply px-3 outline-none text-black;
+            }
+         }
+      }
+   }
+
+   .footer__info {
+      @apply w-[80%] mx-auto grid grid-cols-5 my-5 gap-5;
+      .footer__infos {
+         @apply flex flex-col text-primary;
+         a {
+            @apply text-sm py-2;
+         }
+      }
+   }
+}

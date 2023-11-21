@@ -1,0 +1,21 @@
+h2 {
+   @apply font-bold text-lead;
+}
+
+.hotelType {
+   @apply grid grid-cols-5 gap-5 my-5;
+   .hotelType__items {
+      @apply relative;
+      .hotelType__content {
+         img {
+            @apply w-full h-[150px] rounded-xl mb-3;
+         }
+
+         .hotelType__text {
+            h3 {
+               @apply font-bold;
+            }
+         }
+      }
+   }
+}

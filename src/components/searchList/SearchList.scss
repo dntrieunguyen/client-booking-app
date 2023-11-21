@@ -1,0 +1,60 @@
+.searchList {
+   @apply w-full;
+   .searchl__items {
+      @apply border p-3 gap-5 grid grid-cols-5 px-3 w-full rounded-md my-5;
+      img {
+         @apply h-full w-full col-start-1 col-span-2;
+      }
+
+      .searchl__text {
+         @apply col-start-3 col-span-2;
+         h2 {
+            @apply my-0 text-lg text-primary;
+         }
+         p {
+            @apply my-5;
+         }
+
+         p:nth-of-type(2) {
+            @apply font-bold;
+         }
+         p:nth-of-type(4) {
+            @apply font-bold text-green-700;
+         }
+         p:nth-of-type(5) {
+            @apply text-green-700;
+         }
+
+         span {
+            @apply p-1  bg-green-700 text-white rounded-md;
+         }
+      }
+
+      .searchl__info {
+         @apply flex flex-col justify-between;
+         .searchl__irating {
+            @apply flex justify-between;
+            p {
+               @apply font-bold;
+            }
+            span {
+               @apply p-1 bg-primary text-white;
+            }
+         }
+
+         .searchl__iaction {
+            @apply flex flex-col items-end;
+            p:first-of-type {
+               @apply text-lead;
+            }
+            p:last-of-type {
+               @apply text-gray-500 text-sm;
+            }
+         }
+
+         button {
+            @apply my-3 text-white bg-primary;
+         }
+      }
+   }
+}

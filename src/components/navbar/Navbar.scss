@@ -1,0 +1,13 @@
+nav {
+   @apply bg-primary text-white;
+   .navbar__content {
+      @apply w-[80%] mx-auto flex h-[50px] items-center justify-between;
+      .navbar__brand {
+         @apply cursor-pointer font-bold;
+      }
+
+      .navbar__btn {
+         @apply flex gap-5;
+      }
+   }
+}

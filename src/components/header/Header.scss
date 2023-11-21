@@ -1,0 +1,78 @@
+header {
+   @apply h-[350px] bg-primary relative;
+}
+
+.header__content {
+   @apply w-[80%] mx-auto text-white;
+   .header__list {
+      @apply flex gap-3;
+      .header__listItem {
+         @apply flex items-center cursor-pointer gap-2 border px-3 py-2 rounded-2xl border-primary
+         hover:border-white;
+
+         i {
+         }
+      }
+   }
+
+   .header__title {
+      h2 {
+         @apply text-title font-bold;
+      }
+      p {
+         @apply py-5;
+      }
+   }
+
+   .header__search {
+      @apply absolute w-[80%] border h-[50px] rounded-sm text-gray-300 bg-white
+      border-2 border-yellow-500
+      bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2
+      flex justify-around gap-5;
+
+      input {
+         @apply outline-none;
+      }
+
+      .header__searchInput,
+      .header__DatePicker,
+      .header__Amount {
+         @apply flex justify-center items-center gap-2 relative;
+
+         .dot {
+            @apply h-fit w-fit;
+         }
+
+         .header__AmountExpand {
+            @apply absolute bottom-0 w-[250px] bg-white translate-y-40 min-h-[150px] shadow-sm border;
+         }
+      }
+
+      .header__searchBtn {
+         @apply flex items-center justify-center relative;
+
+         button {
+            @apply bg-primary text-white h-fit;
+         }
+      }
+      .header__AmountExpand {
+         @apply z-20;
+         .header__AmountExpandItems {
+            @apply flex justify-between p-3;
+
+            .header__AmountExpandAction {
+               input {
+                  @apply w-[20px] p-1 mx-3;
+               }
+            }
+         }
+      }
+   }
+}
+.active {
+   border: 1px solid white !important;
+}
+
+.datePickerExpand {
+   @apply w-[250px] absolute;
+}
