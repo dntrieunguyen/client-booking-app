@@ -1,5 +1,5 @@
 header {
-   @apply h-[350px] bg-primary relative;
+   @apply h-[350px] bg-primary relative z-50;
 }
 
 .header__content {
@@ -56,7 +56,6 @@ header {
          }
       }
       .header__AmountExpand {
-         @apply z-20;
          .header__AmountExpandItems {
             @apply flex justify-between p-3;
 
@@ -67,8 +66,13 @@ header {
             }
          }
       }
+
+      .header__datePickerExpand {
+         @apply absolute top-10;
+      }
    }
 }
+
 .active {
    border: 1px solid white !important;
 }

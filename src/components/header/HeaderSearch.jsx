@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import Button from '../button/Button';
 import { Link } from 'react-router-dom';
 import AmountExpand from './AmountExpand';
+import { useSelector } from 'react-redux';
+import DatePicker from '../datePicker/DatePicker';
 
 function HeaderSearch() {
    const [isShowAmountExpand, setIsShowAmountExpand] = useState(false);
+   const [isShowDatePicker, setIsShowDatePicker] = useState(false);
+   const amount = useSelector(state => state.amountPick);
+   const datePick = useSelector(state => state.datePick);
 
-   const handleShowAmountExpand = () => {
-      setIsShowAmountExpand(!isShowAmountExpand);
-   };
    return (
       <>
          <div className="header__search">
@@ -19,22 +21,32 @@ function HeaderSearch() {
 
             <div className="header__DatePicker">
                <i className="fa-solid fa-calendar"></i>
-               <span>06/02/2022</span>
+               <span onClick={() => setIsShowDatePicker(!isShowDatePicker)}>
+                  {datePick.dateStart}
+               </span>
                <span>to</span>
-               <span>06/02/2022</span>
+               <span onClick={() => setIsShowDatePicker(!isShowDatePicker)}>
+                  {datePick.dateEnd}
+               </span>
+
+               {isShowDatePicker && (
+                  <div className="header__datePickerExpand">
+                     <DatePicker></DatePicker>
+                  </div>
+               )}
             </div>
 
             <div className="header__Amount">
                <div
-                  onClick={handleShowAmountExpand}
+                  onClick={() => {
+                     setIsShowAmountExpand(!isShowAmountExpand);
+                  }}
                   className="header__AmountInput"
                >
-                  <i className="fa-solid fa-person"></i>
-                  <span>1 adult</span>
-                  <span className="dot">.</span>
-                  <span>1 children</span>
-                  <span className="dot">.</span>
-                  <span>1 rooms</span>
+                  <i className="fa-solid fa-person"></i>{' '}
+                  <span>{amount.adult} adult</span>{' '}
+                  <span>{amount.children} children</span>{' '}
+                  <span>{amount.rooms} rooms</span>
                </div>
                <AmountExpand
                   isShowAmountExpand={isShowAmountExpand}

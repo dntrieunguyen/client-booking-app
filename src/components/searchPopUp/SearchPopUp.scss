@@ -1,5 +1,5 @@
 .search__container {
-   @apply w-[350px] bg-yellow-500 h-fit p-3 rounded-md my-5 sticky top-5;
+   @apply w-[400px] bg-yellow-500 h-fit p-3 rounded-md my-5 sticky top-5;
    h2 {
       @apply text-content text-gray-500 my-0;
    }
@@ -10,7 +10,7 @@
          @apply my-5;
 
          input {
-            @apply my-3 outline-none bg-white w-full h-10;
+            @apply my-3 outline-none bg-white w-full h-10 p-3;
          }
 
          label {
@@ -33,7 +33,11 @@
          }
       }
    }
-   button {
+   #button {
       @apply bg-primary text-white w-full;
    }
+}
+
+.search__datePickerExpand {
+   @apply absolute -left-5;
 }
