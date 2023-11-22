@@ -36,11 +36,8 @@ export const amountSlice = createSlice({
       UPDATE_AMOUNT: (state, action) => {
          //handle
          const payload = action.payload;
-         state = prev => ({ ...prev, payload });
-      },
-
-      UPDATE_INPUT_AMOUNT: (state, action) => {
-         //handle
+         const key = Object.keys(payload);
+         state[key] = payload[key];
       },
    },
 });

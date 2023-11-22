@@ -26,9 +26,11 @@ const SearchPopUp = () => {
                   </label>
                   <input
                      type="text"
-                     value={`${datePick.dateStart} to ${datePick.dateEnd}`}
+                     defaultValue={`${datePick.dateStart} to ${datePick.dateEnd}`}
                      name="searchF__checkin"
-                     onkeydown="return false"
+                     onKeyDown={() => {
+                        return false;
+                     }}
                      onClick={() => setIsShowDatePicker(!isShowDatePicker)}
                   />
                   {isShowDatePicker && (
@@ -55,8 +57,12 @@ const SearchPopUp = () => {
                      name="adult"
                      type="number"
                      value={amount.adult}
-                     onChange={() => {
-                        dispatch(amountSlice.actions.UPDATE_AMOUNT());
+                     onChange={e => {
+                        dispatch(
+                           amountSlice.actions.UPDATE_AMOUNT({
+                              [e.target.name]: e.target.value,
+                           }),
+                        );
                      }}
                      min={0}
                   />
@@ -67,8 +73,12 @@ const SearchPopUp = () => {
                      name="children"
                      type="number"
                      value={amount.children}
-                     onChange={() => {
-                        dispatch(amountSlice.actions.UPDATE_AMOUNT());
+                     onChange={e => {
+                        dispatch(
+                           amountSlice.actions.UPDATE_AMOUNT({
+                              [e.target.name]: e.target.value,
+                           }),
+                        );
                      }}
                      min={0}
                   />
@@ -76,11 +86,15 @@ const SearchPopUp = () => {
                <div className="searchForm_optItems">
                   <label htmlFor="">Room</label>
                   <input
-                     name="room"
+                     name="rooms"
                      type="number"
                      value={amount.rooms}
-                     onChange={() => {
-                        dispatch(amountSlice.actions.UPDATE_AMOUNT());
+                     onChange={e => {
+                        dispatch(
+                           amountSlice.actions.UPDATE_AMOUNT({
+                              [e.target.name]: e.target.value,
+                           }),
+                        );
                      }}
                      min={0}
                   />
