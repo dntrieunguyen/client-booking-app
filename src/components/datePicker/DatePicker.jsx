@@ -6,7 +6,7 @@ import { DateRange } from 'react-date-range';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDateTime } from '../../utils/getDateTime';
 import { setStringToDate } from '../../utils/setStringToDate';
-import { formSearchSlice } from '../../redux/reducer/formSearchSlice';
+import { formSearchSlice } from '../searchPopUp/formSearchSlice';
 const DatePicker = () => {
    const datePick = useSelector(state => state.formSearch.datePicker);
    console.log();

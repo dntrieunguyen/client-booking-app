@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { formSearchSlice } from './reducer/formSearchSlice';
+import { formSearchSlice } from '../components/searchPopUp/formSearchSlice';
 
 export const store = configureStore({
    reducer: {

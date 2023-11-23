@@ -1,10 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { formSearchSlice } from '../../redux/reducer/formSearchSlice';
+import { formSearchSlice } from '../searchPopUp/formSearchSlice';
 
 function AmountExpand({ isShowAmountExpand }) {
    const dispatch = useDispatch();
    const amount = useSelector(state => state.formSearch.amount);
+
    const handleOnChange = e => {
       const { name, value } = e.target;
       dispatch(formSearchSlice.actions.UPDATE_AMOUNT({ [name]: value }));

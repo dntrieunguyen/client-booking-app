@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SearchPopUp.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import DatePicker from '../datePicker/DatePicker';
-import { formSearchSlice } from '../../redux/reducer/formSearchSlice';
+import { formSearchSlice } from './formSearchSlice';
 
 const SearchPopUp = () => {
    const [isShowDatePicker, setIsShowDatePicker] = useState(false);
@@ -10,8 +10,15 @@ const SearchPopUp = () => {
    const datePick = useSelector(state => state.formSearch.datePicker);
    const amount = useSelector(state => state.formSearch.amount);
    const price_per_night = useSelector(state => state.formSearch.price);
-
    const dispatch = useDispatch();
+
+   const handleOnChange = (actionType, e) => {
+      dispatch(
+         formSearchSlice.actions[actionType]({
+            [e.target.name]: e.target.value,
+         }),
+      );
+   };
 
    return (
       <section className="search__container">
@@ -47,13 +54,7 @@ const SearchPopUp = () => {
                      type="number"
                      min={0}
                      value={price_per_night.min}
-                     onChange={e =>
-                        dispatch(
-                           formSearchSlice.actions.UPDATE_PRICE({
-                              [e.target.name]: e.target.value,
-                           }),
-                        )
-                     }
+                     onChange={e => handleOnChange('UPDATE_PRICE', e)}
                   />
                </div>
                <div className="searchForm_optItems">
@@ -63,13 +64,7 @@ const SearchPopUp = () => {
                      type="number"
                      min={0}
                      value={price_per_night.max}
-                     onChange={e =>
-                        dispatch(
-                           formSearchSlice.actions.UPDATE_PRICE({
-                              [e.target.name]: e.target.value,
-                           }),
-                        )
-                     }
+                     onChange={e => handleOnChange('UPDATE_PRICE', e)}
                   />
                </div>
                <div className="searchForm_optItems">
@@ -78,13 +73,7 @@ const SearchPopUp = () => {
                      name="adult"
                      type="number"
                      value={amount.adult}
-                     onChange={e => {
-                        dispatch(
-                           formSearchSlice.actions.UPDATE_AMOUNT({
-                              [e.target.name]: e.target.value,
-                           }),
-                        );
-                     }}
+                     onChange={e => handleOnChange('UPDATE_AMOUNT', e)}
                      min={0}
                   />
                </div>
@@ -94,13 +83,7 @@ const SearchPopUp = () => {
                      name="children"
                      type="number"
                      value={amount.children}
-                     onChange={e => {
-                        dispatch(
-                           formSearchSlice.actions.UPDATE_AMOUNT({
-                              [e.target.name]: e.target.value,
-                           }),
-                        );
-                     }}
+                     onChange={e => handleOnChange('UPDATE_AMOUNT', e)}
                      min={0}
                   />
                </div>
@@ -110,13 +93,7 @@ const SearchPopUp = () => {
                      name="rooms"
                      type="number"
                      value={amount.rooms}
-                     onChange={e => {
-                        dispatch(
-                           formSearchSlice.actions.UPDATE_AMOUNT({
-                              [e.target.name]: e.target.value,
-                           }),
-                        );
-                     }}
+                     onChange={e => handleOnChange('UPDATE_AMOUNT', e)}
                      min={0}
                   />
                </div>
