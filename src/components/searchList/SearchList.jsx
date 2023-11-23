@@ -2,7 +2,6 @@ import React from 'react';
 import './SearchList.scss';
 import searchData from '../../data/search.json';
 const SearchList = () => {
-   console.log(searchData[0].image_url);
    return (
       <section className="searchList">
          {searchData.map((item, index) => (

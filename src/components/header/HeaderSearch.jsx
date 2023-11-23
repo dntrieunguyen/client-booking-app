@@ -8,8 +8,8 @@ import DatePicker from '../datePicker/DatePicker';
 function HeaderSearch() {
    const [isShowAmountExpand, setIsShowAmountExpand] = useState(false);
    const [isShowDatePicker, setIsShowDatePicker] = useState(false);
-   const amount = useSelector(state => state.amountPick);
-   const datePick = useSelector(state => state.datePick);
+   const amount = useSelector(state => state.formSearch.amount);
+   const datePick = useSelector(state => state.formSearch.datePicker);
 
    return (
       <>
@@ -22,11 +22,11 @@ function HeaderSearch() {
             <div className="header__DatePicker">
                <i className="fa-solid fa-calendar"></i>
                <span onClick={() => setIsShowDatePicker(!isShowDatePicker)}>
-                  {datePick.dateStart}
+                  {datePick.startDate}
                </span>
                <span>to</span>
                <span onClick={() => setIsShowDatePicker(!isShowDatePicker)}>
-                  {datePick.dateEnd}
+                  {datePick.endDate}
                </span>
 
                {isShowDatePicker && (

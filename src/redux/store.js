@@ -1,10 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { dateSlice } from './reducer/dateSlice';
-import { amountSlice } from './reducer/amountSlice';
+import { formSearchSlice } from './reducer/formSearchSlice';
 
 export const store = configureStore({
    reducer: {
-      datePick: dateSlice.reducer,
-      amountPick: amountSlice.reducer,
+      formSearch: formSearchSlice.reducer,
    },
 });

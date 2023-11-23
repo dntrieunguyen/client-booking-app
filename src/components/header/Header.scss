@@ -37,7 +37,7 @@ header {
       .header__searchInput,
       .header__DatePicker,
       .header__Amount {
-         @apply flex justify-center items-center gap-2 relative;
+         @apply flex justify-center items-center gap-2 relative cursor-pointer;
 
          .dot {
             @apply h-fit w-fit;

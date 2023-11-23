@@ -1,16 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import './DatePicker.scss';
 import { DateRange } from 'react-date-range';
-import { useDispatch } from 'react-redux';
-import { dateSlice } from '../../redux/reducer/dateSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import { getDateTime } from '../../utils/getDateTime';
+import { setStringToDate } from '../../utils/setStringToDate';
+import { formSearchSlice } from '../../redux/reducer/formSearchSlice';
 const DatePicker = () => {
+   const datePick = useSelector(state => state.formSearch.datePicker);
+   console.log();
    const [state, setState] = useState([
       {
-         startDate: new Date(),
-         endDate: null,
+         startDate: setStringToDate(datePick.startDate, 'dd/MM/YYYY', '/'),
+         endDate: setStringToDate(datePick.endDate, 'dd/MM/YYYY', '/'),
          key: 'selection',
       },
    ]);
@@ -18,14 +21,17 @@ const DatePicker = () => {
    const handleOnChange = item => {
       setState([item.selection]);
    };
-   dispatch(
-      dateSlice.actions.UPDATE_DATE({
-         dateStart: getDateTime(state[0]?.startDate),
-         dateEnd: state[0]?.endDate
-            ? getDateTime(state[0]?.endDate)
-            : getDateTime(new Date()),
-      }),
-   );
+   useEffect(() => {
+      dispatch(
+         formSearchSlice.actions.UPDATE_DATE({
+            dateStart: getDateTime(state[0]?.startDate),
+            dateEnd: state[0]?.endDate
+               ? getDateTime(state[0]?.endDate)
+               : getDateTime(new Date()),
+         }),
+      );
+   }, [state]);
+
    return (
       <>
          <DateRange

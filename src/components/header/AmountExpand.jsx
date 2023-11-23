@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { amountSlice } from '../../redux/reducer/amountSlice';
+import { formSearchSlice } from '../../redux/reducer/formSearchSlice';
 
 function AmountExpand({ isShowAmountExpand }) {
    const dispatch = useDispatch();
-   const amount = useSelector(state => state.amountPick);
+   const amount = useSelector(state => state.formSearch.amount);
    const handleOnChange = e => {
       const { name, value } = e.target;
-      dispatch(amountSlice.actions.UPDATE_AMOUNT({ [name]: value }));
+      dispatch(formSearchSlice.actions.UPDATE_AMOUNT({ [name]: value }));
    };
 
    return (
@@ -22,7 +22,7 @@ function AmountExpand({ isShowAmountExpand }) {
             <span>Adult</span>
             <div className="header__AmountExpandAction">
                <button
-                  onClick={() => dispatch(amountSlice.actions.PLUS_ADULT())}
+                  onClick={() => dispatch(formSearchSlice.actions.PLUS_ADULT())}
                >
                   +
                </button>
@@ -35,7 +35,7 @@ function AmountExpand({ isShowAmountExpand }) {
                <button
                   onClick={
                      amount.adult > 0
-                        ? () => dispatch(amountSlice.actions.MINUS_ADULT())
+                        ? () => dispatch(formSearchSlice.actions.MINUS_ADULT())
                         : () => {}
                   }
                >
@@ -47,7 +47,9 @@ function AmountExpand({ isShowAmountExpand }) {
             <span>Children</span>
             <div className="header__AmountExpandAction">
                <button
-                  onClick={() => dispatch(amountSlice.actions.PLUS_CHILDREN())}
+                  onClick={() =>
+                     dispatch(formSearchSlice.actions.PLUS_CHILDREN())
+                  }
                >
                   +
                </button>
@@ -60,7 +62,8 @@ function AmountExpand({ isShowAmountExpand }) {
                <button
                   onClick={
                      amount.children > 0
-                        ? () => dispatch(amountSlice.actions.MINUS_CHILDREN())
+                        ? () =>
+                             dispatch(formSearchSlice.actions.MINUS_CHILDREN())
                         : () => {}
                   }
                >
@@ -72,7 +75,7 @@ function AmountExpand({ isShowAmountExpand }) {
             <span>Rooms</span>
             <div className="header__AmountExpandAction">
                <button
-                  onClick={() => dispatch(amountSlice.actions.PLUS_ROOMS())}
+                  onClick={() => dispatch(formSearchSlice.actions.PLUS_ROOMS())}
                >
                   +
                </button>
@@ -85,7 +88,7 @@ function AmountExpand({ isShowAmountExpand }) {
                <button
                   onClick={
                      amount.rooms > 0
-                        ? () => dispatch(amountSlice.actions.MINUS_ROOMS())
+                        ? () => dispatch(formSearchSlice.actions.MINUS_ROOMS())
                         : () => {}
                   }
                >
