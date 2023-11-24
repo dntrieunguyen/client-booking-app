@@ -2,7 +2,7 @@ import React from 'react';
 import './HotelDetail.scss';
 import detailData from '../../data/detail.json';
 
-const HotelDetail = () => {
+const HotelDetail = ({ setIsShowForm }) => {
    return (
       <>
          {' '}
@@ -41,7 +41,13 @@ const HotelDetail = () => {
                      <span>${detailData.nine_night_price}</span> (9 nights)
                   </h2>
 
-                  <button>Reverse or Book Now!</button>
+                  <button
+                     onClick={() => {
+                        setIsShowForm(true);
+                     }}
+                  >
+                     Reverse or Book Now!
+                  </button>
                </div>
             </div>
          </main>
