@@ -1,0 +1,14 @@
+export { default as Button } from './button/Button';
+export { default as CityComponent } from './city/CityComponent';
+export { default as DatePicker } from './datePicker/DatePicker';
+export { default as Footer } from './footer/Footer';
+export { default as FormBooking } from './formBooking/FormBooking';
+export { default as AmountExpand } from './header/AmountExpand';
+export { default as Header } from './header/Header';
+export { default as HeaderSearch } from './header/HeaderSearch';
+export { default as HotelDetail } from './hotelDetail/HotelDetail';
+export { default as HotelList } from './hotelList/HotelList';
+export { default as HotelType } from './hotelType/HotelType';
+export { default as Navbar } from './navbar/Navbar';
+export { default as SearchList } from './searchList/SearchList';
+export { default as SearchPopUp } from './searchPopUp/SearchPopUp';

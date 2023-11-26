@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-import HotelDetail from '../../components/hotelDetail/HotelDetail';
-import FormBooking from '../../components/formBooking/FormBooking';
+import { FormBooking, HotelDetail } from '../../components';
 
 function Detail() {
    const [isShowForm, setIsShowForm] = useState(false);

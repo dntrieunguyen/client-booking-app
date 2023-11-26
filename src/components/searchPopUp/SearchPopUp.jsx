@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SearchPopUp.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import DatePicker from '../datePicker/DatePicker';
+import { DatePicker } from '../../components';
 import { formSearchSlice } from './formSearchSlice';
 
 const SearchPopUp = () => {
@@ -15,7 +15,7 @@ const SearchPopUp = () => {
    const handleOnChange = (actionType, e) => {
       dispatch(
          formSearchSlice.actions[actionType]({
-            [e.target.name]: e.target.value,
+            [e.target.name]: +e.target.value,
          }),
       );
    };

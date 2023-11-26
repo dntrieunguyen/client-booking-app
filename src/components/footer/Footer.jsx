@@ -2,6 +2,7 @@ import React from 'react';
 import './Footer.scss';
 import footerData from '../../data/footer.json';
 import { Link } from 'react-router-dom';
+import Button from '../button/Button';
 
 function Footer() {
    return (
@@ -12,7 +13,8 @@ function Footer() {
                <p>Sign up and we'll send the best deals to you</p>
                <div className="footer__input">
                   <input placeholder="Your Email" type="text" />
-                  <button>Subcrise</button>
+
+                  <Button text="Subcribe"></Button>
                </div>
             </div>
          </div>

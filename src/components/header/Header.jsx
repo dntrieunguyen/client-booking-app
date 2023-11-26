@@ -3,8 +3,10 @@ import './Header.scss';
 import headerList from '../../data/navBar.json';
 import Button from '../button/Button';
 import HeaderSearch from './HeaderSearch';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+   const navigate = useNavigate();
    return (
       <header>
          <div className="header__content">
@@ -31,7 +33,12 @@ function Header() {
                </p>
             </div>
             <div className="header__btn">
-               <Button>Sign In/Register</Button>
+               <Button
+                  text="Sign In/Register"
+                  onClick={() => {
+                     navigate('/search');
+                  }}
+               ></Button>
             </div>
 
             <HeaderSearch></HeaderSearch>

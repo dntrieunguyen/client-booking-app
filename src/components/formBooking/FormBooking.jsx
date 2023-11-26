@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './FormBooking.scss';
-import DatePicker from '../datePicker/DatePicker';
+import { DatePicker } from '../../components';
 import { useSelector } from 'react-redux';
 import { setStringToDate } from '../../utils/setStringToDate';
 const FormBooking = () => {

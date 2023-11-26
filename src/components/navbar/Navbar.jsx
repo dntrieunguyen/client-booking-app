@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navbar.scss';
-import Button from '../button/Button';
 import { Link } from 'react-router-dom';
+import { Button } from '../../components';
 function Navbar() {
    return (
       <nav>
@@ -11,10 +11,10 @@ function Navbar() {
             </Link>
             <div className="navbar__btn">
                <Link to="/login">
-                  <Button>Log In</Button>
+                  <Button text="Log In"></Button>
                </Link>
                <Link to="/register">
-                  <Button>Register</Button>
+                  <Button text="Register"></Button>
                </Link>
             </div>
          </div>

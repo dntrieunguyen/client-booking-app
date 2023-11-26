@@ -1,6 +1,7 @@
 import React from 'react';
 import './HotelDetail.scss';
 import detailData from '../../data/detail.json';
+import Button from '../button/Button';
 
 const HotelDetail = ({ setIsShowForm }) => {
    return (
@@ -17,7 +18,7 @@ const HotelDetail = ({ setIsShowForm }) => {
                   <p className="detail__tprice">{detailData.price}</p>
                </div>
                <div className="detail__titleBtn">
-                  <button>Reverse or Book Now!</button>
+                  <Button text="Reverse or Book Now!"></Button>
                </div>
             </div>
             <div className="detail__Img">
@@ -40,14 +41,12 @@ const HotelDetail = ({ setIsShowForm }) => {
                   <h2>
                      <span>${detailData.nine_night_price}</span> (9 nights)
                   </h2>
-
-                  <button
+                  <Button
+                     text="Reverse or Book Now!"
                      onClick={() => {
                         setIsShowForm(true);
                      }}
-                  >
-                     Reverse or Book Now!
-                  </button>
+                  ></Button>
                </div>
             </div>
          </main>

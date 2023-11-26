@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Button from '../button/Button';
 import { Link } from 'react-router-dom';
-import AmountExpand from './AmountExpand';
 import { useSelector } from 'react-redux';
-import DatePicker from '../datePicker/DatePicker';
+import { AmountExpand, Button, DatePicker } from '../../components';
 
 function HeaderSearch() {
    const [isShowAmountExpand, setIsShowAmountExpand] = useState(false);
@@ -55,7 +53,7 @@ function HeaderSearch() {
 
             <div className="header__searchBtn">
                <Link to="/search">
-                  <Button>Search</Button>
+                  <Button text="Search"></Button>
                </Link>
             </div>
          </div>

@@ -1,7 +1,6 @@
 import React from 'react';
-import SearchPopUp from '../../components/searchPopUp/SearchPopUp';
-import SearchList from '../../components/searchList/SearchList';
 import './Search.scss';
+import { SearchList, SearchPopUp } from '../../components';
 
 function Search() {
    return (
