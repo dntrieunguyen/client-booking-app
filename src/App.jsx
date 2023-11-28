@@ -1,11 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
-import DefaultLayout from './layout/DefaultLayout';
-import Home from './pages/home/Home';
-import Search from './pages/search/Search';
-import Detail from './pages/detail/Detail';
-import Login from './pages/login/Login';
-import Register from './pages/register/Register';
+import { DefaultLayout } from './layout';
+import { Detail, Home, Login, Register, Search } from './pages';
 
 function App() {
    return (
